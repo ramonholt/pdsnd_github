@@ -149,25 +149,16 @@ def user_stats(df):
     if df.get('Gender') is not None:
         #dfnoNan = df.dropna(subset=['Gender', 'Birth Year'])
         dfnoNanG = df.dropna(subset=['Gender'])
-        #print(dfnoNan.count())        
-        #print(dfnoNan['Gender'].count())        
         print(dfnoNanG['Gender'].value_counts())        
     else:
         print("No Gender information available.")
     
-    #print(str(dfnoNan['Gender'].value_counts()))
-    #print(dfnoNan['Gender'].value_counts())
-
-
     # TO DO: Display earliest, most recent, and most common year of birth
     if df.get('Birth Year') is not None:        
         dfnoNanBY = df.dropna(subset=['Birth Year'])
-        #print(dfnoNan.count())        
-        #print(dfnoNan['Gender'].count())        
         print("\n Earliest Birth Year: " + str(int(dfnoNanBY['Birth Year'].min())))
         print("\n Most Recent Birth Year: " + str(int(dfnoNanBY['Birth Year'].max())))
         print("\n Most Common Birth Year: ")
-        #print(df['Birth Year'].mean()[0])
         print("Mode: " + str(int(df['Birth Year'].mode())))
         print("Mean: " + str(int(df['Birth Year'].mean())))
     else:
@@ -177,28 +168,13 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-#def chunker(iterable, size):
-#    """Yield successive chunks from iterable of length size."""
-#    #for i in range(0, len(iterable), size):        
-#    i = 0
-#    for i in range(size):        
-#        yield iterable[i]
-#        
 def chunker(df, size):
-    #for line in thedataset:
-    #        yield line
     i = 0
-    #while True:
-    for i in range(0, len(df), size):
+        for i in range(0, len(df), size):
         print(df[i:i+size])
-        i += size
-        #print(i, len(df))
-        theinput = input("Would you like more RAW data?")
-        #if input("Would you like more RAW data?").lower != 'yes':
-        if theinput.lower() != 'yes':
-            #print(theinput.lower())
-            #print(theinput.lower() != 'yes')
-            #print("I shouldn't be breaking")
+        i += size        
+        theinput = input("Would you like more RAW data?")        
+        if theinput.lower() != 'yes':            
             break
 
 def main():
@@ -214,14 +190,7 @@ def main():
 
         raw = input('\nWould you like to see the RAW data? Enter yes or no.\n')
         if raw.lower() == 'yes':
-            chunker(df, 5)
-            #while True:
-                #for chunk in chunker(df, 5):
-                #    print(list(chunk))
-                #for line in df:
-                #    print(line)
-                #if input("Would you like more RAW data?").lower != 'yes':
-                #    break
+            chunker(df, 5)            
         
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
