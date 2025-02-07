@@ -55,22 +55,15 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    #print(city)
-    #print(city.lower().replace(' ','_') + '.csv')
+    #see if they select one city's data only
     if city in ['Chicago', 'New York City', 'Washington']:
-        #print(city.lower().replace(' ','_') + '.csv')
-        #thecity = city.lower().replace(' ','_') + '.csv'
-        #print(thecity)
         df = pd.read_csv(city.lower().replace(' ','_') + '.csv')
-        #df = pd.read_csv(thecity)
     # if All is selected combine all files into one dataframe
     elif city == 'All':
         dfch = pd.read_csv('chicago.csv')
         dfny = pd.read_csv('new_york_city.csv')
-        dfwa = pd.read_csv('washington.csv')        
-        #df = pd.concat([dfch, dfny, dfwa], axis=1)
-        df = pd.concat([dfch, dfny, dfwa], axis=0)
-        #print(df.columns)
+        dfwa = pd.read_csv('washington.csv')                
+        df = pd.concat([dfch, dfny, dfwa], axis=0)        
     return df
 
 
