@@ -7,7 +7,6 @@ I create this project on **2/7/2025** as part of the Udacity Course for _Introdu
 
 ### Bikeshare Project
 
-
 ## Description
 The Bikeshare project is an educational study to show that I have completed some competencies in Python. Including:
 - Understanding Data Type and Operators
@@ -19,7 +18,8 @@ The Bikeshare project is an educational study to show that I have completed some
 - Using Pandas
 
 It also included some advanced topics including:
-- Interators and Generators
+- Interators
+- Generators
 
 ## Files used
 The Bikeshare.py project requires the installation of:
@@ -35,4 +35,5 @@ It also requires datafiles, specifically:
 ## Credits
 This Bikeshare.py was written by [Ramon Holt](mail:rholt@mtb.com)
 
+The datafiles were from DIVVY.
 
